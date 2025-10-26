@@ -1,12 +1,16 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Loja {
     private String nome;
-    private Vendedor vendedor;
-    private Instrumento instrumento;
+    private List<Instrumento> estoque = new ArrayList<>();
+    private List<Vendedor> vendedores = new ArrayList<>();
 
-    public Loja(String nome, Instrumento instrumento, Vendedor vendedor) {
+
+    public Loja(String nome, List<Vendedor> vendedores, List<Instrumento> estoque) {
         this.nome = nome;
-        this.instrumento = instrumento;
-        this.vendedor = vendedor;
+        this.vendedores = vendedores;
+        this.estoque = estoque;
     }
 
     public String getNome() {
@@ -17,20 +21,34 @@ public class Loja {
         this.nome = nome;
     }
 
-    public Vendedor getVendedor() {
-        return vendedor;
+    public List<Vendedor> getVendedores() {
+        return vendedores;
     }
 
-    public void setVendedor(Vendedor vendedor) {
-        this.vendedor = vendedor;
+    public void setVendedores(List<Vendedor> vendedores) {
+        this.vendedores = vendedores;
     }
 
-    public Instrumento getInstrumento() {
-        return instrumento;
+    public List<Instrumento> getEstoque() {
+        return estoque;
     }
 
-    public void setInstrumento(Instrumento instrumento) {
-        this.instrumento = instrumento;
+    public void setEstoque(List<Instrumento> estoque) {
+        this.estoque = estoque;
     }
 
+    public void adicionarInstrumento(Instrumento inst){
+        estoque.add(inst);
+    }
+
+    public Instrumento pedirInstrumento(String nomeInst){
+        for(Instrumento i: estoque){
+          if(i.getModelo().equalsIgnoreCase(nomeInst)){
+              estoque.remove(i);
+              return i;
+          }
+        }
+        return null;
+
+    }
 }
