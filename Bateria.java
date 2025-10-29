@@ -23,12 +23,8 @@ public class Bateria extends  Instrumento{
         this.voltagem = voltagem;
     }
 
-    public void volt(Bateria bateria){
-        if(bateria.getTipo() == "eletrica"){
-            //digitarVoltagem|()
-        }
-        else{
-            //é acustica, nao tem voltagem
-        }
+    @Override
+    public void tocar() {
+        System.out.println("Tocando bateria: bum, tch!");
     }
 }

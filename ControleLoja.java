@@ -26,9 +26,15 @@ public class ControleLoja {
 
         System.out.println("1 - Guitarra / 2- Bateria : ");
         int opcao = sc.nextInt();
-        
-        if(opcao == 1){
 
+        if(opcao == 1){
+            Instrumento instrumento1 = new Guitarra();
+            System.out.println("Quantas cordas?: ");
+            int cordas = sc.nextInt();
+
+            System.out.println("qual o shape? :");
+            String shape = sc.nextLine();
+            instrumento = instrumento1;
         }
 
 

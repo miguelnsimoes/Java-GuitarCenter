@@ -41,14 +41,23 @@ public class Loja {
         estoque.add(inst);
     }
 
-    public Instrumento pedirInstrumento(String nomeInst){
-        for(Instrumento i: estoque){
-          if(i.getModelo().equalsIgnoreCase(nomeInst)){
-              estoque.remove(i);
-              return i;
-          }
+    public Instrumento buscarInstrumento(String nome){
+        for(Instrumento i : estoque){
+            if(i.getModelo().equalsIgnoreCase(nome)){
+                return i;
+            }
         }
         return null;
-
     }
+
+    public int quantidadeEstoque(String nome){
+        int count = 0;
+        for(Instrumento i : estoque){
+            if(i.getModelo().equalsIgnoreCase(nome));
+            count++;
+        }
+        return count;
+    }
+
+
 }

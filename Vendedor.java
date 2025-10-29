@@ -18,7 +18,7 @@ public class Vendedor extends Pessoa{
         this.salario = salario;
     }
 
-    public void comicao(Instrumento instrumento) {
+    public void comissao(Instrumento instrumento) {
         double salarioAtualziado = this.salario + (instrumento.getValorInstrumento() * 0.5);
     }
 }
